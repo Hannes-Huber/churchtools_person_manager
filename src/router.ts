@@ -1,18 +1,13 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import type { RouteRecordRaw } from 'vue-router';
 import Start from './components/Start.vue';
-import Home from "./components/Home.vue";
-import About from "./components/About.vue";
-import Contact from "./components/Contact.vue";
 import PersonSearch from './components/PersonSearch.vue';
 import PersonManager from './components/PersonManager.vue';
 import { useAuthStore } from './global/pinia/store';
-import { watch } from 'vue';
 
 const routes: RouteRecordRaw[] = [
     { path: '/start', name: 'start', component: Start },
     { path: '', redirect: { name: 'start' } },
-    { path: "/home", name: "Home", component: Home,  meta: { requiresAuth: true } },
     { path: "/person-manager", name: "Personenen Liste", component: PersonManager,  meta: { requiresAuth: true } },
     { path: "/person-search", name: "Personen Suche", component: PersonSearch,  meta: { requiresAuth: true } },
 ]
