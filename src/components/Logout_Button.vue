@@ -1,5 +1,5 @@
 <template>
-  <Button @click="userLogout">Logout</Button>
+  <Button @click="userLogout" class="bg-black">Logout</Button>
 </template>
 <script setup lang="ts">
   import Button from './ui/button/Button.vue';
