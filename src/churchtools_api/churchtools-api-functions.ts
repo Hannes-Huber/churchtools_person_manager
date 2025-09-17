@@ -55,10 +55,12 @@ export async function getPersonById(id?: number) {
     }
 }
 
-export async function getAllPersons(statuses?: number[]) {
+export async function getAllPersons({ statuses = [], limit = 50, page = 1 }: { statuses?: number[], limit?: number, page?: number }) {
     try {
         const data = await churchtoolsClient.get(`/persons`, {
-            status_ids: statuses
+            status_ids: statuses,
+            limit: limit,
+            page: page,
         });
         console.log("Data:", data);
         return data;

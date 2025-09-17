@@ -441,3 +441,7 @@ button:focus, button:focus-visible {
     @apply bg-background text-foreground;
   }
 }
+
+:deep(.p-datatable-tbody > tr) {
+  cursor: pointer;
+}
